@@ -13,4 +13,16 @@ article {
 	& .title {
 		font-size: 5rem;
 	}
+
+	@media (--viewport-large) {
+		background-color: blue;
+	}
+}
+
+@custom-media --viewport-large (min-width: 70em);
+
+@media (--viewport-large) {
+	body {
+		background-color: rebeccapurple;
+	}
 }
