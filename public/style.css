@@ -1,11 +1,19 @@
 body {
-	background: red;
+	background: purple;
 	font-size: 1.125rem;
 }
 
 body {
 	font-family: sans-serif;
 }
+
+article {
+	background-color: blueviolet
+}
+
+article .title {
+		font-size: 5rem;
+	}
 
 /* Box sizing rules */
 
@@ -39,6 +47,10 @@ ol[role='list'] {
 
 /* Set core root defaults */
 
+html[focus-within] {
+	scroll-behavior: smooth;
+}
+
 html:focus-within {
 	scroll-behavior: smooth;
 }
@@ -54,7 +66,8 @@ body {
 /* A elements that don't have a class get default styles */
 
 a:not([class]) {
-	text-decoration-skip-ink: auto;
+	-webkit-text-decoration-skip: ink;
+	        text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -77,6 +90,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 
 @media (prefers-reduced-motion: reduce) {
+	html[focus-within] {
+		scroll-behavior: auto;
+	}
 	html:focus-within {
 		scroll-behavior: auto;
 	}
@@ -84,8 +100,10 @@ select {
 	*,
 	*::before,
 	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
+		-webkit-animation-duration: 0.01ms !important;
+		        animation-duration: 0.01ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		        animation-iteration-count: 1 !important;
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
@@ -100,10 +118,12 @@ select {
 .container {
 	width: 100%;
 	max-width: 70rem;
-	margin-inline: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .flow > :where(:not(:first-child)) {
+	margin-top: 1rem;
 	margin-top: var(--flow-space, 1rem);
 }
 

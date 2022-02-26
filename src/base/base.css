@@ -1,8 +1,16 @@
 body {
-	background: red;
+	background: purple;
 	font-size: 1.125rem;
 }
 
 body {
 	font-family: sans-serif;
+}
+
+article {
+	background-color: blueviolet;
+
+	& .title {
+		font-size: 5rem;
+	}
 }
